@@ -1,12 +1,14 @@
 package org.example;
+import java.io.IOException;
 import java.util.Scanner;
 
 public class MenuRecursividad {
     static boolean control = false;
-    static void main() {
+    static void main() throws IOException, InterruptedException {
         Scanner teclado = new Scanner(System.in);
         int numero = 0;
         do {
+
             System.out.println("*** Bateria de ejercicios sobre recursividad ***");
             System.out.println("Selecciona a continuacion el modo que quieras ejecutar");
             System.out.println("1 - Digitos");
@@ -72,6 +74,13 @@ public class MenuRecursividad {
                 case 7:
                     System.out.println("Dime el numero que quieres ir sumando hasta ese");
                     numero = teclado.nextInt();
+                    if (numero > 0) {
+                        System.out.print("Secuencia: ");
+                        int suma = sumaRecursiva(numero);
+                        System.out.println(" = " + suma);
+                    } else {
+                        System.out.println("El número debe ser mayor que cero.");
+                    }
                     break;
 
                 default:
@@ -83,6 +92,8 @@ public class MenuRecursividad {
             String opcion2 = teclado.next();
             if (opcion2.equalsIgnoreCase("X")){
                 control=true;
+            }else {
+                borrar();
             }
         }while(control ==false);
 
@@ -152,13 +163,16 @@ public class MenuRecursividad {
         }
 
     }
-    public static int sumatorio(int numero) {
-        if (numero <= numero) {
-            return ;
-        } else{
-            return sumatorio(numero / 2)+numero%2;
-
+    public static int sumaRecursiva(int n) {
+        if (n == 1) {
+            System.out.print("+" + n);
+            return 1;
         }
+        System.out.print("+" + n);
+        return n + sumaRecursiva(n - 1);
+    }
+    public static void borrar() throws IOException, InterruptedException {
+        new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
 
     }
 
