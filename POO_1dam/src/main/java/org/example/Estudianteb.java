@@ -6,5 +6,7 @@ public class Estudianteb {
         System.out.println(jorge.getNia());
 
         Estudiante raul = new Estudiante("raul");
+
+        System.out.println(Estudiante.obtenertotalestudiantes());
     }
 }
