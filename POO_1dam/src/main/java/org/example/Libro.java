@@ -1,12 +1,13 @@
 package org.example;
 
-public class libro {
+public class Libro {
     private static int cantidadlibros=0;
     private static int librosdisponibles=0;
     private String titulo;
     private String Autor;
-    private int id;
+    private String id;
     private boolean disponible;
+    private Estudiante estudiantePrestado;
 
     public String getTitulo() {
         return titulo;
@@ -24,18 +25,25 @@ public class libro {
         Autor = autor;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    private void setId(String id) {
         this.id = id;
     }
-    public libro(String titulo, String autor, int id) {
+
+    public Estudiante getEstudiantePrestado() {
+        return estudiantePrestado;
+    }
+
+
+    public Libro(String titulo, String autor) {
         this.titulo = titulo;
         Autor = autor;
-        this.id = id;
+        this.id = calcularid();
         this.disponible = true;
+        estudiantePrestado = null;
         cantidadlibros++;
         librosdisponibles++;
     }
@@ -43,22 +51,26 @@ public class libro {
         return "LIB"+cantidadlibros;
 
     }
-    public void prestar(){
+    public void prestar(Estudiante estudiante){
         if (disponible==true){
-            System.out.println("el libro ha sido prestado con exito");
+            System.out.println("el libro"+ titulo+" ha sido prestado con exito a "+ estudiantePrestado.getNombre()+ "del curso de"+ estudiantePrestado.getCurso());
             librosdisponibles--;
             disponible=false;
+            estudiantePrestado = estudiante;
+            estudiante.setLibro(this);
+        }else if (estudiante.getLibro() == null){
+
         }else{
             System.out.println("No se puede prestar");
         }
-
-
     }
     public void devolver(){
         if (disponible==false){
             System.out.println("el libro ha sido devuelto con exito");
             librosdisponibles++;
             disponible=true;
+            estudiantePrestado = null;
+            estudiantePrestado.setLibro(null);
         }else{
             System.out.println("No se puede devolver");
         }
@@ -72,7 +84,7 @@ public class libro {
 
     }
     public String toString(){
-        return "libro [titulo: "+ titulo + " autor: "+ Autor + " id: "+ id + " disponible: "+ disponible +"]";
+        return "libro [titulo: "+ titulo + " ,autor: "+ Autor + " ,id: "+ id + " ,disponible: "+ disponible +" ,Estudiante: "+estudiantePrestado+" ]";
 
     }
 
