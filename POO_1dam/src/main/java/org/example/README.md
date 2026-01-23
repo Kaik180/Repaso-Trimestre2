@@ -36,24 +36,9 @@
 
 ## 🧩 Proyectos creados
 
-### 🔹 Gestor de Tareas en Java
-<p align="left">
-  <img src="https://via.placeholder.com/400x200.png?text=Gestor+de+Tareas" width="400" />
-</p>
-
-**Badges:**  
-![Java](https://img.shields.io/badge/Java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white)
-![Consola](https://img.shields.io/badge/CLI-Consola-black?style=for-the-badge)
-
-**Descripción:**  
-Aplicación de consola con CRUD completo para gestionar tareas.  
-**Repositorio:** https://github.com/TU_USUARIO/REPO_GESTOR_TAREAS
-
----
-
 ### 🔹 Página Web Personal
 <p align="left">
-  <img src="https://github.com/Kaik180/kaik180/blob/main/Captura%20de%20pantalla%202026-01-23%20191348.png" width="400" />
+  <img src="web.png" width="400" />
 </p>
 
 **Badges:**  
@@ -65,22 +50,6 @@ Aplicación de consola con CRUD completo para gestionar tareas.
 Sitio web responsive con animaciones y diseño limpio.  
 **Repositorio:** https://github.com/Kaik180/blogparadox.github.io/blob/main/index.html
 **enlace web:** https://kaik180.github.io/blogparadox.github.io/
----
-
-### 🔹 Base de Datos de Inventario
-<p align="left">
-  <img src="https://via.placeholder.com/400x200.png?text=Inventario+SQL" width="400" />
-</p>
-
-**Badges:**  
-![MySQL](https://img.shields.io/badge/MySQL-%2300f.svg?style=for-the-badge&logo=mysql&logoColor=white)
-![SQL](https://img.shields.io/badge/SQL-Query-blue?style=for-the-badge)
-
-**Descripción:**  
-Base de datos completa con relaciones, consultas avanzadas y triggers básicos.  
-**Repositorio:** https://github.com/TU_USUARIO/REPO_INVENTARIO
-
-
 ---
 
 ## 💼 Experiencia Laboral
