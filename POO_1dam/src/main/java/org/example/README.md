@@ -3,7 +3,7 @@
 <h3 align="center">📍 IES MUTXAMEL | 💻 Desarrollador en formación | 🔐 Futuro especialista en Ciberseguridad</h3>
 
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&pause=900&color=00C0FF&center=true&vCenter=true&width=500&lines=Bienvenido+a+mi+perfil+de+GitHub;Aprendiendo+y+creciendo+cada+día;Desarrollador+en+formación" />
+  <img src="logo.png" />
 </p>
 
 ---
@@ -47,9 +47,23 @@
 ![JavaScript](https://img.shields.io/badge/JavaScript-%23F7DF1E.svg?style=for-the-badge&logo=javascript&logoColor=black)
 
 **Descripción:**  
-Sitio web responsive con animaciones y diseño limpio.  
+Sitio web responsive con animaciones y diseño limpio. Fue el primer blog que cree propio  
 **Repositorio:** https://github.com/Kaik180/blogparadox.github.io/blob/main/index.html
 **enlace web:** https://kaik180.github.io/blogparadox.github.io/
+---
+### 🔹 Página Web Empresa - Marca de ropa
+<p align="left">
+  <img src="webtienda.png" width="400" />
+</p>
+
+**Badges:**  
+![HTML5](https://img.shields.io/badge/HTML5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-%23F7DF1E.svg?style=for-the-badge&logo=javascript&logoColor=black)
+
+**Descripción:**  
+Sitio web responsive con animaciones y diseño limpio. Es mi tienda online donde tambien publico informacion
+**enlace web:** https://paradoxshop.es/
 ---
 
 ## 💼 Experiencia Laboral
