@@ -8,7 +8,15 @@ public class Libro {
     private String id;
     private boolean disponible;
     private Estudiante estudiantePrestado;
+    private Editorial editoriallibro;
 
+    public Editorial getEditoriallibro() {
+        return editoriallibro;
+    }
+
+    public void setEditoriallibro(Editorial editoriallibro) {
+        editoriallibro = editoriallibro;
+    }
     public String getTitulo() {
         return titulo;
     }
@@ -38,12 +46,13 @@ public class Libro {
     }
 
 
-    public Libro(String titulo, String autor) {
+    public Libro(String titulo, String autor, Editorial editoriallibros) {
         this.titulo = titulo;
         Autor = autor;
         this.id = calcularid();
         this.disponible = true;
         estudiantePrestado = null;
+        editoriallibro = editoriallibros;
         cantidadlibros++;
         librosdisponibles++;
     }
@@ -52,14 +61,14 @@ public class Libro {
 
     }
     public void prestar(Estudiante estudiante){
-        if (disponible==true){
+        if (disponible && estudiante.getLibro() != null){
             System.out.println("el libro"+ titulo+" ha sido prestado con exito a "+ estudiantePrestado.getNombre()+ "del curso de"+ estudiantePrestado.getCurso());
             librosdisponibles--;
             disponible=false;
             estudiantePrestado = estudiante;
             estudiante.setLibro(this);
         }else if (estudiante.getLibro() == null){
-
+            System.out.println("el estudiante "+ estudiante.getNombre()+" ya tiene un libro prestado");
         }else{
             System.out.println("No se puede prestar");
         }
@@ -84,7 +93,7 @@ public class Libro {
 
     }
     public String toString(){
-        return "libro [titulo: "+ titulo + " ,autor: "+ Autor + " ,id: "+ id + " ,disponible: "+ disponible +" ,Estudiante: "+estudiantePrestado+" ]";
+        return "libro [titulo: "+ titulo + " ,autor: "+ Autor + " ,id: "+ id + " ,disponible: "+ disponible +" ,Estudiante: "+estudiantePrestado.getNombre()+" Editorial:"+editoriallibro+" ]";
 
     }
 
