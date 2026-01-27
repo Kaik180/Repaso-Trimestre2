@@ -60,18 +60,21 @@ public class Libro {
         return "LIB"+cantidadlibros;
 
     }
-    public void prestar(Estudiante estudiante){
-        if (disponible && estudiante.getLibro() != null){
+    public Prestamo prestar(Estudiante estudiante){
+
+        Prestamo prestamo = null;
+        if (disponible && estudiante.getLibro()==null){
             System.out.println("el libro"+ titulo+" ha sido prestado con exito a "+ estudiantePrestado.getNombre()+ "del curso de"+ estudiantePrestado.getCurso());
             librosdisponibles--;
             disponible=false;
             estudiantePrestado = estudiante;
             estudiante.setLibro(this);
-        }else if (estudiante.getLibro() == null){
-            System.out.println("el estudiante "+ estudiante.getNombre()+" ya tiene un libro prestado");
+            prestamo = new Prestamo(this,estudiante);
+            System.out.println("prestamo realizado con exito");;
         }else{
-            System.out.println("No se puede prestar");
+            System.out.println("No se puede prestar este libro");
         }
+        return prestamo;
     }
     public void devolver(){
         if (disponible==false){

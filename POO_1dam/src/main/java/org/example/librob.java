@@ -4,10 +4,9 @@ public class librob {
     static void main() {
         Editorial Capcoon = new Editorial("Capcoon", "España");
         Libro Divina_comedia = new Libro("Divina_comedia", "Kevin Muñoz Corcoles", Capcoon);
-        System.out.println(Divina_comedia);
         Estudiante jorge = new Estudiante("jorge","1DAM","jorge@iesmutxamel.com");
-        Divina_comedia.prestar(jorge);
-        System.out.println(Divina_comedia);
+        Prestamo p1 = Divina_comedia.prestar(jorge);
+        System.out.println(p1);
 
     }
 }
