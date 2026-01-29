@@ -1,10 +1,20 @@
 package org.example;
 
+import java.util.ArrayList;
+
 public class Editorial {
 
     private String nombre;
     private String pais;
+    private ArrayList<Electrodomestico> listaEelectrodomesticos;
 
+    public ArrayList<Electrodomestico> getListaEelectrodomesticos() {
+        return listaEelectrodomesticos;
+    }
+
+    public void setListaEelectrodomesticos(ArrayList<Electrodomestico> listaEelectrodomesticos) {
+        this.listaEelectrodomesticos = listaEelectrodomesticos;
+    }
     public Editorial(String nombre, String pais) {
         this.nombre = nombre;
         this.pais = pais;
