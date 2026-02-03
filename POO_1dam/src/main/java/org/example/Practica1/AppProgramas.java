@@ -1,4 +1,4 @@
 package org.example.Practica1;
 
-public class Pelea {
+public class AppProgramas {
 }
