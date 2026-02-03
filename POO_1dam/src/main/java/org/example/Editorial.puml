@@ -1,0 +1,82 @@
+@startuml
+
+class Editorial {
+    - nombre : String
+    - pais : String
+    - listaEelectrodomesticos : ArrayList<Electrodomestico>
+    + getListaEelectrodomesticos() : ArrayList<Electrodomestico>
+    + setListaEelectrodomesticos(lista : ArrayList<Electrodomestico>) : void
+    + getNombre() : String
+    + setNombre(nombre : String) : void
+    + getPais() : String
+    + setPais(pais : String) : void
+    + toString() : String
+}
+
+class Libro {
+    - cantidadlibros : int
+    - librosdisponibles : int
+    - titulo : String
+    - Autor : String
+    - id : String
+    - disponible : boolean
+    - estudiantePrestado : Estudiante
+    - editoriallibro : Editorial
+    + getEditoriallibro() : Editorial
+    + setEditoriallibro(editorial : Editorial) : void
+    + getTitulo() : String
+    + setTitulo(titulo : String) : void
+    + getAutor() : String
+    + setAutor(autor : String) : void
+    + getId() : String
+    + getEstudiantePrestado() : Estudiante
+    + prestar(estudiante : Estudiante) : Prestamo
+    + devolver() : void
+    + estadisponible() : int
+    + getlibrosdisponibles() : int
+    + toString() : String
+}
+
+class Estudiante {
+    - contador_estudiantes : int
+    - CORREO_FORMATO : String
+    - nombre : String
+    - curso : String
+    - nia : int
+    - email : String
+    - libro : Libro
+    + getNombre() : String
+    + setNombre(nombre : String) : void
+    + getCurso() : String
+    + setCurso(curso : String) : void
+    + getNia() : int
+    + setNia(nia : int) : void
+    + getEmail() : String
+    + setEmail(email : String) : void
+    + getLibro() : Libro
+    + setLibro(libro : Libro) : void
+    + toString() : String
+    + obtenertotalestudiantes() : int
+    + validarcorreo(email : String) : boolean
+}
+
+class Prestamo {
+    - libro : Libro
+    - estudiante : Estudiante
+    - fecha : LocalDateTime
+    + getLibro() : Libro
+    + setLibro(libro : Libro) : void
+    + getEstudiante() : Estudiante
+    + setEstudiante(estudiante : Estudiante) : void
+    + getFecha() : LocalDateTime
+    + setFecha(fecha : LocalDateTime) : void
+    + toString() : String
+}
+
+' Relaciones
+Editorial "1" -- "*" Libro : publica >
+Libro "*" --> "1" Estudiante : prestado a >
+Prestamo "1" o--> "1" Libro
+Prestamo "1" o--> "1" Estudiante
+
+@enduml
