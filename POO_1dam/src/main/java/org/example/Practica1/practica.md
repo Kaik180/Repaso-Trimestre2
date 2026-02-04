@@ -31,7 +31,7 @@ Clases principales:
 - `Programa`
 - `Empleado`
 - `Invitado`
-- `AppProgramas`
+- `AppProgramas`'
 
 ---
 
@@ -94,61 +94,42 @@ Constructor:
 
 # Diagrama UML
 
-```plantuml
-@startuml
+![](img/Practica1.png)
 
-skinparam classAttributeIconSize 0
+# Compilación y ejecución
 
-class Cadena {
-    - nombre : String
-    - listaProgramas : ArrayList<Programa>
-    + addPrograma(p : Programa)
-    + toString() : String
-}
+Enseñare como se copila y se va ejecutando AppProgramas probando todas las clases y metodos cumpliendo sus funciones
 
-class Programa {
-    - nombre : String
-    - cadena : Cadena
-    - temporadas : int
-    - listaEmpleados : ArrayList<Empleado>
-    - listaInvitados : ArrayList<Invitado>
-    - director : Empleado
-    + addEmpleado(e : Empleado)
-    + addInvitado(i : Invitado)
-    + invitadosTemporada(t : int)
-    + vecesInvitado(nombre : String) : int
-    + rastrearInvitado(nombre : String)
-    + buscarInvitado(nombre : String) : boolean
-    + invitadoAntes(nombre : String, p1 : Programa, p2 : Programa)
-    + toString() : String
-}
+## Creamos Cadenas, directores, programas y empleados
 
-class Empleado {
-    - id : String
-    - nombre : String
-    - cargo : String
-    - director : Empleado
-    + verificarCargo(cargo : String) : String
-    + calcularId() : String
-    + toString() : String
-}
+Los podemos crear directamente ya que no nos piden que se haga algo por teclado
 
-class Invitado {
-    - nombre : String
-    - profesion : String
-    - fecha_visita : LocalDate
-    - temporada : int
-    + setFecha(f : LocalDate)
-    + toString() : String
-}
 
-Cadena "1" o-- "*" Programa
-Programa "1" *-- "*" Empleado
-Programa "1" *-- "*" Invitado
-Programa "1" --> "1" Empleado : director
+![](img/Crear-Cadena-director-Programa.png)
 
-```
-## Compilación y ejecución
+## Creamos invitados
+
+![](img/Invitado.png)
+
+Como nos piden tenemos que poner por teclado que fecha fue realizada la visita
+
+![](img/Invitado2.png)
+
+## Probar el metodo InvitadosTemporada
+
+a partir de este metodo le podemos preguntar que invitados vinieron en X temporada y nos devolvera los nombres, profesiones y el total
+
+![](img/IT.png)
+
+## Probar el metodo VecesInvitado
+
+El metodo nos dira cuantas veces fue invitado a un programa
+
+![](img/VI.png)
+
+## Probar el metodo RastrearInvitado
+
+![](img/RI.png)
 
 
 @enduml

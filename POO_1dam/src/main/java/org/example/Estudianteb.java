@@ -5,7 +5,7 @@ public class Estudianteb {
         Estudiante jorge = new Estudiante("jorge","1DAM","jorge@iesmutxamel.com");
         System.out.println(jorge.getNia());
 
-        Estudiante raul = new Estudiante("raul");
+        Estudiante raul = new Estudiante("kevin", "raul");
 
         System.out.println(Estudiante.obtenertotalestudiantes());
     }

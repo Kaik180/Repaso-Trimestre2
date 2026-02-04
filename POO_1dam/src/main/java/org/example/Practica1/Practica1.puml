@@ -1,0 +1,59 @@
+@startuml
+
+skinparam classAttributeIconSize 0
+
+' ===== CLASE CADENA =====
+class Cadena {
+    - nombre : String
+    - listaProgramas : ArrayList<Programa>
+    + addPrograma(p : Programa)
+    + toString() : String
+}
+
+' ===== CLASE PROGRAMA =====
+class Programa {
+    - nombre : String
+    - cadena : Cadena
+    - temporadas : int
+    - listaEmpleados : ArrayList<Empleado>
+    - listaInvitados : ArrayList<Invitado>
+    - director : Empleado
+    + addEmpleado(e : Empleado)
+    + addInvitado(i : Invitado)
+    + invitadosTemporada(t : int)
+    + vecesInvitado(nombre : String) : int
+    + rastrearInvitado(nombre : String)
+    + buscarInvitado(nombre : String) : boolean
+    + invitadoAntes(nombre : String, p1 : Programa, p2 : Programa)
+    + toString() : String
+}
+
+' ===== CLASE EMPLEADO =====
+class Empleado {
+    - id : String
+    - nombre : String
+    - cargo : String
+    - director : Empleado
+    + verificarCargo(cargo : String) : String
+    + calcularId() : String
+    + toString() : String
+}
+
+' ===== CLASE INVITADO =====
+class Invitado {
+    - nombre : String
+    - profesion : String
+    - fecha_visita : LocalDate
+    - temporada : int
+    + setFecha(f : LocalDate)
+    + toString() : String
+}
+
+' ===== RELACIONES =====
+
+Cadena "1" o-- "*" Programa : contiene >
+Programa "1" *-- "*" Empleado : composición >
+Programa "1" *-- "*" Invitado : composición >
+Programa "1" --> "1" Empleado : director >
+
+@enduml

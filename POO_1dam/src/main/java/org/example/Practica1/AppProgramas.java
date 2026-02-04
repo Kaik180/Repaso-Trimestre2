@@ -29,7 +29,7 @@ public class AppProgramas {
         hormiguero.addEmpleado(e1);
         salvame.addEmpleado(e2);
 
-        // Añadir invitados (con fecha por teclado)
+        // Añadir invitados
         System.out.println("Creando invitado para El Hormiguero:");
         Invitado i1 = new Invitado("actor", "Mario Casas", 5);
         hormiguero.addInvitado(i1);
@@ -42,19 +42,19 @@ public class AppProgramas {
         hormiguero.addInvitado(i3);
 
         // Probar invitadosTemporada
-        System.out.println("\n--- Invitados temporada 5 en El Hormiguero ---");
+        System.out.println("--- Invitados temporada 5 en El Hormiguero ---");
         hormiguero.invitadosTemporada(5);
 
         // Probar vecesInvitado
-        System.out.println("\n--- Veces que Mario Casas ha sido invitado en El Hormiguero ---");
+        System.out.println("--- Veces que Mario Casas ha sido invitado en El Hormiguero ---");
         System.out.println("Veces: " + hormiguero.vecesInvitado("Mario Casas"));
 
         // Probar rastrearInvitado
-        System.out.println("\n--- Rastrear Mario Casas en El Hormiguero ---");
+        System.out.println("--- Rastrear Mario Casas en El Hormiguero ---");
         hormiguero.rastrearInvitado("Mario Casas");
 
         // Probar buscarInvitado
-        System.out.println("\n--- Buscar Aitana en Sálvame ---");
+        System.out.println("--- Buscar Aitana en Sálvame ---");
         boolean encontrado = salvame.buscarInvitado("Aitana");
         System.out.println("¿Está Aitana en Sálvame? " + encontrado);
 

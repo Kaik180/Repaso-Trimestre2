@@ -54,7 +54,7 @@ public class Estudiante {
         this.email = email;
         libro = null;
     }
-    public Estudiante(String nombre) {
+    public Estudiante(String kevin, String nombre) {
         this(nombre,"","");
     }
     @Override
