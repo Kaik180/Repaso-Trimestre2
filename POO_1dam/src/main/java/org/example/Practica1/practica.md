@@ -129,8 +129,21 @@ El metodo nos dira cuantas veces fue invitado a un programa
 
 ## Probar el metodo RastrearInvitado
 
+Nos dice cuantas veces a acudido, las fechas y temporadas que fue
+
 ![](img/RI.png)
 
+## Probar el metodo buscarInvitado
+
+Nos dice si alguna vez el invitado estuvo
+
+![](img/BI.png)
+
+## Probar el metodo invitadoAntes
+
+El metodo busca cuando fue invitado en los dos programas y dice donde fue invitado antes
+
+![](img/IA.png)
 
 @enduml
 
