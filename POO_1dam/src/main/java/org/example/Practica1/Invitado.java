@@ -1,7 +1,7 @@
 package org.example.Practica1;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
+import java.util.Scanner;
 
 public class Invitado {
 
@@ -42,12 +42,21 @@ public class Invitado {
         this.temporada = temporada;
     }
 
-    public Invitado(String profesion, String nombre, LocalDateTime fecha, int temporada) {
+    public Invitado(String profesion, String nombre, int temporada) {
         this.profesion = profesion;
         this.nombre = nombre;
-        this.fecha = LocalDate.now();
         this.temporada = temporada;
+        Scanner teclado = new Scanner(System.in);
+        System.out.println("Introduce el año de visita:");
+        int anio = teclado.nextInt();
+        System.out.println("Introduce el mes de visita:");
+        int mes = teclado.nextInt();
+        System.out.println("Introduce el día de visita:");
+        int dia = teclado.nextInt();
+        LocalDate fechaVisita = LocalDate.of(anio, mes, dia);
+        setFecha(fechaVisita);
     }
+
 
 
 }

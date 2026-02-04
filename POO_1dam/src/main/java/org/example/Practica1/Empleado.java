@@ -30,10 +30,10 @@ public class Empleado {
         this.cargo = cargo;
     }
 
-    public Empleado(String id, String nombre, String cargo, Empleado director) {
+    public Empleado(String nombre, String cargo, Empleado director) {
         this.id = calcularid();
         this.nombre = nombre;
-        this.cargo = cargo;
+        this.cargo = verificarCargo(cargo);
         this.director=director;
         CANTIDADEMPLEADOS++;
     }
