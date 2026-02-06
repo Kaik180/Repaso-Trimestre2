@@ -4,59 +4,29 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class Programa {
+
     private String nombre;
     private Cadena cadena;
     private int temporadas;
     private ArrayList<Empleado> listaEmpleados;
     private ArrayList<Invitado> listaInvitados;
     private Empleado director;
-    public String getNombre() {
-        return nombre;
-    }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
 
-    public Cadena getCadena() {
-        return cadena;
-    }
+    public String getNombre() { return nombre; }
+    public void setNombre(String nombre) { this.nombre = nombre; }
 
-    public void setCadena(Cadena cadena) {
-        this.cadena = cadena;
-    }
+    public Cadena getCadena() { return cadena; }
+    public void setCadena(Cadena cadena) { this.cadena = cadena; }
 
-    public int getTemporadas() {
-        return temporadas;
-    }
+    public int getTemporadas() { return temporadas; }
+    public void setTemporadas(int temporadas) { this.temporadas = temporadas; }
 
-    public void setTemporadas(int temporadas) {
-        this.temporadas = temporadas;
-    }
+    public ArrayList<Empleado> getListaEmpleados() { return listaEmpleados; }
+    public ArrayList<Invitado> getListaInvitados() { return listaInvitados; }
 
-    public ArrayList<Empleado> getListaEmpleados() {
-        return listaEmpleados;
-    }
+    public Empleado getDirector() { return director; }
 
-    public void setListaEmpleados(ArrayList<Empleado> listaEmpleados) {
-        this.listaEmpleados = listaEmpleados;
-    }
-
-    public ArrayList<Invitado> getListaInvitados() {
-        return listaInvitados;
-    }
-
-    public void setListaInvitados(ArrayList<Invitado> listaInvitados) {
-        this.listaInvitados = listaInvitados;
-    }
-
-    public Empleado getDirector() {
-        return director;
-    }
-
-    public void setDirector(Empleado director) {
-        this.director = director;
-    }
 
     public void addEmpleado(Empleado e) {
         listaEmpleados.add(e);
@@ -66,6 +36,23 @@ public class Programa {
         listaInvitados.add(i);
     }
 
+    // Constructor
+    public Programa(String nombre, Cadena cadena, int temporadas, Empleado director) {
+        this.nombre = nombre;
+        this.cadena = cadena;
+        this.temporadas = temporadas;
+
+        this.listaEmpleados = new ArrayList<>();
+        this.listaInvitados = new ArrayList<>();
+
+        this.director = director;
+
+        // ✔ El director debe añadirse automáticamente
+        this.listaEmpleados.add(director);
+
+        // ✔ El programa se añade automáticamente a la cadena
+        cadena.addPrograma(this);
+    }
 
     @Override
     public String toString() {
@@ -79,15 +66,7 @@ public class Programa {
                 '}';
     }
 
-    public Programa(String nombre, Cadena cadena, int temporadas, Empleado director) {
-        this.nombre = nombre;
-        this.cadena = cadena;
-        this.temporadas = temporadas;
-        this.listaEmpleados = new ArrayList<>();
-        this.listaInvitados = new ArrayList<>();
-        this.director = director;
-        cadena.addPrograma(this);
-    }
+
     public void invitadosTemporada(int temporadaBuscada) {
         int contador = 0;
         for (Invitado i : listaInvitados) {
@@ -98,6 +77,7 @@ public class Programa {
         }
         System.out.println("Total de invitados en la temporada " + temporadaBuscada + ": " + contador);
     }
+
     public int vecesInvitado(String nombre) {
         int contador = 0;
         for (Invitado i : listaInvitados) {
@@ -107,6 +87,7 @@ public class Programa {
         }
         return contador;
     }
+
     public void rastrearInvitado(String nombre) {
         int veces = vecesInvitado(nombre);
         System.out.println("El invitado " + nombre + " ha acudido " + veces + " veces.");
@@ -117,6 +98,7 @@ public class Programa {
             }
         }
     }
+
     public boolean buscarInvitado(String nombre) {
         for (Invitado i : listaInvitados) {
             if (i.getNombre().equalsIgnoreCase(nombre)) {
@@ -125,6 +107,7 @@ public class Programa {
         }
         return false;
     }
+
     public static void invitadoAntes(String nombre, Programa p1, Programa p2) {
         LocalDate fecha1 = null;
         LocalDate fecha2 = null;
@@ -145,9 +128,9 @@ public class Programa {
 
         if (fecha1 != null && fecha2 != null) {
             if (fecha1.isBefore(fecha2)) {
-                System.out.println(nombre + " estuvo primero en el programa " + p1.getNombre() + " el día " + fecha1);
+                System.out.println(nombre + " estuvo primero en " + p1.getNombre() + " el día " + fecha1);
             } else if (fecha2.isBefore(fecha1)) {
-                System.out.println(nombre + " estuvo primero en el programa " + p2.getNombre() + " el día " + fecha2);
+                System.out.println(nombre + " estuvo primero en " + p2.getNombre() + " el día " + fecha2);
             } else {
                 System.out.println(nombre + " estuvo en ambos programas el mismo día: " + fecha1);
             }
@@ -155,9 +138,5 @@ public class Programa {
             System.out.println("El invitado no ha estado en ambos programas.");
         }
     }
-
-
-
-
-
 }
+
