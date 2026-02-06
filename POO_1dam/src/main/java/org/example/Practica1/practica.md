@@ -1,6 +1,5 @@
-# Práctica 1: **El Formiguero y La Rebelión**
-
-Aplicación desarrollada en Java para gestionar información de programas de televisión, sus cadenas, empleados e invitados. Proyecto de Programación – 1º DAM (IES Mutxamel).
+# Práctica 1: El Formiguero y La Rebelión
+ Kevin Muñoz Corcoles - 1º DAM (IES Mutxamel).
 
 ---
 
@@ -13,25 +12,21 @@ Aplicación desarrollada en Java para gestionar información de programas de tel
     - [Clase Empleado](#clase-empleado)
     - [Clase Invitado](#clase-invitado)
 - [Diagrama UML](#diagrama-uml)
-- [Ejemplo de funcionamiento](#ejemplo-de-funcionamiento)
-- [Plan de pruebas](#plan-de-pruebas)
-- [Estructura del proyecto](#estructura-del-proyecto)
 - [Compilación y ejecución](#compilación-y-ejecución)
-- [Autoría](#autoría)
-- [Licencia](#licencia)
 
 ---
 
 # Descripción general
 
-La aplicación simula el funcionamiento de dos programas de televisión enfrentados mediáticamente. Permite registrar empleados, invitados, temporadas y fechas de visita para analizar datos de forma objetiva.
+El codigo simula la aplicacion que se nos pide que es una app que registre el seguimiento de dos cadenas, de sus programas, directores, empleados y invitados. Con unas funcionalidades que se nos piden como metodos
+
 
 Clases principales:
 - `Cadena`
 - `Programa`
 - `Empleado`
 - `Invitado`
-- `AppProgramas`'
+- `AppProgramas`
 
 ---
 

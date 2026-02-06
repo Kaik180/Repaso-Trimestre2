@@ -27,7 +27,7 @@ public class PruebasArraylist {
         System.out.println("las notas de Raúl: ");
         for (Integer nota : listanotas){
 
-            System.out.println("noa de la asignatura: "+ nota);
+            System.out.println("nota de la asignatura: "+ nota);
         }
         for (int i =0; i<listanotas.size(); i++){
             System.out.println("nota de la asignatura"+ (i+1)+ ": "+ listanotas.get(i));

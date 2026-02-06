@@ -49,11 +49,12 @@ class Invitado {
     + toString() : String
 }
 
-' ===== RELACIONES =====
+Cadena "1" o--> "*" Programa : contiene
 
-Cadena "1" o-- "*" Programa : contiene >
-Programa "1" *-- "*" Empleado : composición >
-Programa "1" *-- "*" Invitado : composición >
-Programa "1" --> "1" Empleado : director >
+Programa "1" *--> "*" Empleado : empleados
+
+Programa "1" *--> "*" Invitado : invitados
+
+Empleado "1" --> "1" Empleado : director
 
 @enduml
