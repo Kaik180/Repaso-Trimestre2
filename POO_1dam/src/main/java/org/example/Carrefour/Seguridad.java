@@ -45,6 +45,12 @@ public class Seguridad extends Persona{
             System.out.println(a);
         }
     }
+
+    @Override
+    public void trabajar() {
+        System.out.println("vigilar el carrefour y sospechosos");
+    }
+
     public void listaArmasAdd(String arma){
         this.armas.add(arma);
 

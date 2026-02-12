@@ -31,5 +31,10 @@ public class Reponedor extends Persona {
         System.out.println("Pasillo en el que trabaja:"+ pasillo);
     }
 
+    @Override
+    public void trabajar() {
+        System.out.println("reponer la comida");
+    }
+
     private int pasillo;
 }

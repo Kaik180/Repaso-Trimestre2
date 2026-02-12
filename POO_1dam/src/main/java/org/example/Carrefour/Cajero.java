@@ -29,6 +29,10 @@ public class Cajero extends Persona {
         System.out.println("Cajero que trabaja es"+ cajero);
     }
 
+    @Override
+    public void trabajar() {
+        System.out.println("estar en el cajero");
+    }
 
 
     public Cajero(int codigo, String nombre, int sueldo) {

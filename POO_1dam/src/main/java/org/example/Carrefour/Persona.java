@@ -1,6 +1,6 @@
 package org.example.Carrefour;
 
-public class Persona {
+public abstract class Persona {
     public int getCodigo() {
         return codigo;
     }
@@ -46,4 +46,7 @@ public class Persona {
     private int codigo;
     private int sueldo;
     private String nombre;
+
+    public abstract void trabajar();
+
 }
