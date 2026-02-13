@@ -40,19 +40,22 @@ public class TarjetaCredito extends MetodoDePago {
         System.out.println("Procesando pago de "+ importe + " con tarjeta de credito "+ tipo);
     }
 
-    public boolean validarTarjeta(){
+    public boolean validarTarjeta() {
 
-        if (nro_tarjeta.length()>16){
+        if (nro_tarjeta.length() > 16) {
             return false;
-        }else{
-            String[] palabras = {"hola", "adios", "java", "mundo"};
+
+        } else {
+            String[] palabras = {"TarjetaCredito", "PayPal", "Bizum"};
             for (int i = 0; i < palabras.length; i++) {
-                if (palabras[i].equals(tipo)) {
+                if (tipo.contains(palabras[i])) {
                     return true;
-                    
                 }
             }
         }
+
+        return false;
     }
+
 }
 
