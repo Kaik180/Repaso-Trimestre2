@@ -46,11 +46,9 @@ public class Bizum extends MetodoDePago {
         return cadena;
     }
     public boolean validarBizum() {
-        System.out.println(pin);
+        System.out.println("introduce el pin");
+        int pin2 = teclado.nextInt();
         if (telefono.length()==9){
-            System.out.println("introduce el pin");
-            int pin2 = teclado.nextInt();
-            teclado.nextLine();
             if (pin==pin2){
                 return true;
             }

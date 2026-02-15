@@ -1,0 +1,58 @@
+@startuml
+title Sistema de Pago - Diagrama de Clases
+
+class Tienda {
+    - Scanner teclado
+    --
+    + realizarPago(metodo: MetodoDePago)
+    + iniciarPago()
+}
+
+abstract class MetodoDePago {
+    + procesarPago(importe: double)
+}
+
+class TarjetaCredito {
+    - nro_tarjeta: String
+    - tipo: String
+    --
+    + getNro_tarjeta(): String
+    + setNro_tarjeta(String)
+    + getTipo(): String
+    + setTipo(String)
+    + validarTarjeta(): boolean
+    + procesarPago(double)
+}
+
+class Bizum {
+    - telefono: String
+    - pin: int
+    - teclado: Scanner
+    --
+    + getTelefono(): String
+    + setTelefono(String)
+    + getPin(): int
+    + setPin(int)
+    + generarNumerosCadena(): String
+    + validarBizum(): boolean
+    + procesarPago(double)
+}
+
+class Paypal {
+    - cuenta: String
+    - saldo: double
+    --
+    + getCuenta(): String
+    + setCuenta(String)
+    + getSaldo(): double
+    + setSaldo(double)
+    + validarPaypal(): boolean
+    + procesarPago(double)
+}
+
+Tienda --> MetodoDePago : usa
+MetodoDePago <|-- TarjetaCredito
+MetodoDePago <|-- Bizum
+MetodoDePago <|-- Paypal
+
+@enduml
