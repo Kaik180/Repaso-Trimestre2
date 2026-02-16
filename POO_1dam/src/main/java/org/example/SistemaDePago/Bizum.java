@@ -31,7 +31,7 @@ public class Bizum extends MetodoDePago {
     private int pin;
     @Override
     public void procesarPago(double importe) {
-        System.out.println("Procesando pago de "+ importe + " con tarjeta de credito ");
+        System.out.println("Procesando pago de "+ importe + " con bizum ");
     }
 
     public String generarNumerosCadena() {

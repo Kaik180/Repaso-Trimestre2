@@ -10,16 +10,16 @@ public class Tienda {
 
     }
     public void iniciarPago(){
-        System.out.println("Seleccione método de pago: tarjetaCredito, Paypal, Bizum");
+        System.out.println("Seleccione método de pago: tarjeta, Paypal, Bizum");
         String opcion = teclado.next().toLowerCase();
         teclado.nextLine();
         switch (opcion){
-            case "tarjetaCredito":
+            case "tarjeta":
                 System.out.println("introduce el numero de tarjeta");
                 String numero = teclado.next();
                 teclado.nextLine();
                 System.out.println("introduce el tipo de tarjeta [VISA, MAESTRO, MASTERCARD]");
-                String tipo2 = teclado.next();
+                String tipo2 = teclado.next().toLowerCase();
                 teclado.nextLine();
                 TarjetaCredito tarjeta = new TarjetaCredito(numero,tipo2);
                 if (tarjeta.validarTarjeta()){

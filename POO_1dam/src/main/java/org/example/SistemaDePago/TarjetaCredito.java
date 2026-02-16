@@ -46,7 +46,7 @@ public class TarjetaCredito extends MetodoDePago {
             return false;
 
         } else {
-            String[] palabras = {"TarjetaCredito", "PayPal", "Bizum"};
+            String[] palabras = {"visa", "maestro", "mastercard"};
             for (int i = 0; i < palabras.length; i++) {
                 if (tipo.contains(palabras[i])) {
                     return true;
