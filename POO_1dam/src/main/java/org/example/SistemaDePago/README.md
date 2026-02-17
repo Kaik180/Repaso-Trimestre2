@@ -118,6 +118,23 @@ Comprobamos como funciona con tarjeta pidiendo los datos y introduciendo el pin 
 
 ![](img/pbtarjeta.png)
 
+- opciones de fallo
+
+no introducir bien el metodo de pago
+
+![](img/Fmetodo.png)
+
+no introducir bien los datos de la tarjeta
+
+![](img/Ftarjeta.png)
+
+no introducir bien los datos del paypal
+
+![](img/Fpaypal.png)
+
+no introducir bien los datos del paypal
+
+![](img/Fbizum.png)
 
 
 @enduml

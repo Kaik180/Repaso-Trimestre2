@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html","k":"18"},{"p":"org.example.SPJavadoc","l":"Bizum"},{"p":"org.example.SPJavadoc","l":"MetodoDePago"},{"p":"org.example.SPJavadoc","l":"Paypal"},{"p":"org.example.SPJavadoc","l":"TarjetaCredito"},{"p":"org.example.SPJavadoc","l":"Tienda"}];updateSearchResults();
