@@ -36,7 +36,6 @@ public class CasaApp {
         listaDispositivos.add(televisor);
         listaDispositivos.add(parlante);
         listaDispositivos.add(horno);
-        listaDispositivos.add(proyector);
         for (Dispositivo a : listaDispositivos){
             a.enceder();
             a.mostrarEstado();
