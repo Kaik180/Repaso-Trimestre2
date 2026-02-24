@@ -12,7 +12,7 @@ public class PruebasExcepciones {
 
         if (edad>=15){
 
-            throw new EdadValida("hola");
+            throw new EdadValida();
 
         }
 

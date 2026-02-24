@@ -17,6 +17,17 @@ public class Entrenador extends MutxamelIFC implements AccionesDeportivas{
         this.formacionPreferida = formacionPreferida;
     }
 
+    @Override
+    public String toString() {
+        return "Entrenador{" +
+                "nombre='" + getNombre() + '\'' +
+                ", edad=" + getEdad() +
+                ", equipo=" + equipo +
+                ", formacionPreferida='" + formacionPreferida + '\'' +
+                '}';
+    }
+
+
     private Equipos equipo;
     private String formacionPreferida;
 
