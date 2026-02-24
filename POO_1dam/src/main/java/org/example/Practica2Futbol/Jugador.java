@@ -1,6 +1,9 @@
 package org.example.Practica2Futbol;
 
+import java.util.ArrayList;
+
 public class Jugador extends  MutxamelIFC implements AccionesDeportivas  {
+    static ArrayList<Jugador> listajugadores = new ArrayList<>();
     public Equipos getCategoria() {
         return categoria;
     }
@@ -34,6 +37,8 @@ public class Jugador extends  MutxamelIFC implements AccionesDeportivas  {
         this.categoria=categoria;
         this.dorsal=dorsal;
         this.posicion=posicion;
+        validarDorsal();
+
     }
 
     public void calentar(){
@@ -58,7 +63,7 @@ public class Jugador extends  MutxamelIFC implements AccionesDeportivas  {
 
     @Override
     public void celebrarGol() {
-        System.out.println("El jugador"+getNombre()+ " Celebra el gol gol gol gol");
+        System.out.println("El jugador "+getNombre()+ " Celebra el gol gol gol gol");
     }
 
     public void entrenar() {
@@ -68,5 +73,20 @@ public class Jugador extends  MutxamelIFC implements AccionesDeportivas  {
     @Override
     public void jugadorPartido(String rival) {
         System.out.println("El jugador "+getNombre()+" tiene como rival: "+ rival);
+    }
+    private void validarDorsal() {
+
+        for (Jugador j : listajugadores){
+            if (j.categoria.equals(categoria)){
+                if (j.dorsal==dorsal){
+                    throw new DorsalIncorrectaException(
+                            "La dorsal ya esta escogida por otro jugador"
+                    );
+                }
+
+            }
+
+        }
+        listajugadores.add(this);
     }
 }

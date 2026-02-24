@@ -7,10 +7,9 @@ public class AppMutxamelFC {
 
     static Scanner teclado = new Scanner(System.in);
     static ArrayList<Entrenador> listaEntrenadores = new ArrayList<>();
-
     private static final String PATRON_FORMACION = "\\d-\\d-\\d";
 
-    // MAIN CORRECTO
+
     public static void main(String[] args) {
 
         String opcion;
@@ -49,15 +48,12 @@ public class AppMutxamelFC {
         } while (!opcion.equals("X"));
     }
 
-    // ============================
-    //      MENÚ ENTRENADORES
-    // ============================
 
     private static void menuEntrenadores() {
         String opcion;
 
         do {
-            System.out.println("\n=== Mantenimiento de Entrenadores ===");
+            System.out.println("=== Mantenimiento de Entrenadores ===");
             System.out.println("[1]. Añadir nuevo entrenador");
             System.out.println("[2]. Modificar datos de entrenador existente");
             System.out.println("[X]. Volver al menú principal");
@@ -81,9 +77,6 @@ public class AppMutxamelFC {
         } while (!opcion.equals("X"));
     }
 
-    // ============================
-    //      AÑADIR ENTRENADOR
-    // ============================
 
     private static void añadirEntrenador() {
 
@@ -118,10 +111,10 @@ public class AppMutxamelFC {
             System.out.print("Formación preferida (formato N-N-N): ");
             String formacion = teclado.nextLine().trim();
 
-            // Validar formación con excepción personalizada
+
             validarFormacion(formacion);
 
-            // Crear entrenador
+
             Entrenador nuevo = new Entrenador(nombre, edad, equipo, formacion);
             listaEntrenadores.add(nuevo);
 
@@ -136,7 +129,7 @@ public class AppMutxamelFC {
         }
     }
 
-    private static void validarFormacion(String formacion) throws FormacionIncorrectaException {
+    private static void validarFormacion(String formacion) {
 
         if (!formacion.matches(PATRON_FORMACION)) {
             throw new FormacionIncorrectaException(
@@ -158,14 +151,14 @@ public class AppMutxamelFC {
         }
 
         System.out.print("Selecciona un entrenador --> ");
-        int idx = Integer.parseInt(teclado.nextLine());
+        int idx = teclado.nextInt();
 
         if (idx < 0 || idx >= listaEntrenadores.size()) {
             System.out.println("Índice no válido.");
             return;
         }
 
-        Entrenador e = listaEntrenadores.get(idx);
+        Entrenador entrenador = listaEntrenadores.get(idx);
 
         System.out.println("¿Qué quieres modificar? [nombre, edad, equipo, formacion]");
         String campo = teclado.nextLine().toLowerCase();
@@ -174,24 +167,24 @@ public class AppMutxamelFC {
             switch (campo) {
                 case "nombre":
                     System.out.print("Nuevo nombre: ");
-                    e.setNombre(teclado.nextLine());
+                    entrenador.setNombre(teclado.nextLine());
                     break;
 
                 case "edad":
                     System.out.print("Nueva edad: ");
-                    e.setEdad(Integer.parseInt(teclado.nextLine()));
+                    entrenador.setEdad(teclado.nextInt());
                     break;
 
                 case "equipo":
                     System.out.print("Nuevo equipo: ");
-                    e.setEquipo(Equipos.valueOf(teclado.nextLine().toUpperCase()));
+                    entrenador.setEquipo(Equipos.valueOf(teclado.nextLine().toUpperCase()));
                     break;
 
                 case "formacion":
                     System.out.print("Nueva formación (N-N-N): ");
                     String nuevaFormacion = teclado.nextLine();
                     validarFormacion(nuevaFormacion);
-                    e.setFormacionPreferida(nuevaFormacion);
+                    entrenador.setFormacionPreferida(nuevaFormacion);
                     break;
 
                 default:
@@ -200,9 +193,9 @@ public class AppMutxamelFC {
 
             System.out.println("Modificación realizada.");
 
-        } catch (FormacionIncorrectaException ex) {
-            System.out.println("¡Error! " + ex.getMessage());
-        } catch (Exception ex) {
+        } catch (FormacionIncorrectaException e) {
+            System.out.println("¡Error! " + e.getMessage());
+        } catch (Exception e) {
             System.out.println("Error en los datos introducidos.");
         }
     }

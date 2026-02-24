@@ -27,8 +27,8 @@ public class Masajista extends MutxamelIFC {
     }
 
 
-    public void darMasaje(){
-        System.out.println( getNombre()+ "prodece a darle un masaje al jugador");
+    public void darMasaje(Jugador j){
+        System.out.println( getNombre()+ "prodece a darle un masaje al jugador "+ j.getNombre());
 
     }
     @Override
