@@ -7,15 +7,15 @@ import java.util.Set;
 
 public class Mercadaw {
     public HashSet<Cliente> getClienteSet() {
-        return clienteSet;
+        return clientes;
     }
 
     public void setClienteSet(HashSet<Cliente> clienteSet) {
-        this.clienteSet = clienteSet;
+        this.clientes = clienteSet;
     }
 
     public Mercadaw() {
-        this.clienteSet = clienteSet;
+        this.clientes = clientes;
     }
     public void generarClientes(){
         String caracteres = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
@@ -26,9 +26,32 @@ public class Mercadaw {
 
         }
     }
-    public Set<Cliente> getClientes(){
-
-        return null;
+    public Set<Cliente> getClientes() {
+        // Devuelve una versión protegida
+        return Collections.unmodifiableSet(clientes);
     }
-    private HashSet<Cliente> clienteSet;
+    private HashSet<Cliente> clientes;
+
+    public void generarcliente(){
+        String caracteres = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+        Random random = new Random();
+        String usuario = "";
+        String contrasenya = "";
+
+        for (int i = 0; i < 8; i++) {
+            int pos = random.nextInt(caracteres.length());
+            usuario += caracteres.charAt(pos);
+        }
+        for (int i = 0; i < 8; i++) {
+            int pos = random.nextInt(caracteres.length());
+            contrasenya += caracteres.charAt(pos);
+        }
+
+        System.out.println("Usuario generado: " + usuario + " contraseña generada: "+ contrasenya);
+        Cliente cliente = new Cliente(usuario, contrasenya);
+        clientes.add(cliente);
+
+    }
+
+
 }

@@ -20,8 +20,8 @@ public class Pedido {
     }
 
     public Pedido() {
-        this.pedido = pedido;
-        this.importeTotal = importeTotal;
+        this.pedido = new HashMap<>();
+        this.importeTotal = 0;
     }
     public void actualizarImporteTotal(double importe){
 

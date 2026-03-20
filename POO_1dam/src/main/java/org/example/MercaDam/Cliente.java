@@ -1,5 +1,7 @@
 package org.example.MercaDam;
 
+import java.util.Random;
+
 public class Cliente {
     private String usuario;
 
