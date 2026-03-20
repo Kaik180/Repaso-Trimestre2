@@ -23,9 +23,7 @@ public class Mercadaw {
         String cadena = "";
 
         for (int i = 0; i < 6; i++) {
-            String num;
-            num = r.next();
-            cadena = cadena + num;
+
         }
     }
     public Set<Cliente> getClientes(){
