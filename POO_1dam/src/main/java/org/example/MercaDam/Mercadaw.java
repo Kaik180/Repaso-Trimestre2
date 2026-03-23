@@ -1,57 +1,34 @@
 package org.example.MercaDam;
 
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.Random;
-import java.util.Set;
+import java.util.*;
 
 public class Mercadaw {
-    public HashSet<Cliente> getClienteSet() {
-        return clientes;
-    }
+    private Set<Cliente> clientes = new HashSet<>();
 
-    public void setClienteSet(HashSet<Cliente> clienteSet) {
-        this.clientes = clienteSet;
-    }
-
-    public Mercadaw() {
-        this.clientes = clientes;
-    }
-    public void generarClientes(){
+    public void generarClientes() {
         String caracteres = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-        Random r = new Random();
-        String cadena = "";
+        Random rnd = new Random();
 
-        for (int i = 0; i < 6; i++) {
+        System.out.println("--- CLIENTES GENERADOS (Copia uno para entrar) ---");
 
+        for (int i = 0; i < 5; i++) {
+            StringBuilder u = new StringBuilder();
+            StringBuilder c = new StringBuilder();
+            for (int j = 0; j < 8; j++) { // Tamaño 8 según instrucciones [cite: 73]
+                u.append(caracteres.charAt(rnd.nextInt(caracteres.length())));
+                c.append(caracteres.charAt(rnd.nextInt(caracteres.length())));
+            }
+
+            Cliente nuevo = new Cliente(u.toString(), c.toString());
+            clientes.add(nuevo);
+
+
+            System.out.println("Usuario: " + nuevo.getUsuario() + " | Contraseña: " + nuevo.getContrasenya());
         }
+        System.out.println("--------------------------------------------------\n");
     }
+
     public Set<Cliente> getClientes() {
-        // Devuelve una versión protegida
         return Collections.unmodifiableSet(clientes);
     }
-    private HashSet<Cliente> clientes;
-
-    public void generarcliente(){
-        String caracteres = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-        Random random = new Random();
-        String usuario = "";
-        String contrasenya = "";
-
-        for (int i = 0; i < 8; i++) {
-            int pos = random.nextInt(caracteres.length());
-            usuario += caracteres.charAt(pos);
-        }
-        for (int i = 0; i < 8; i++) {
-            int pos = random.nextInt(caracteres.length());
-            contrasenya += caracteres.charAt(pos);
-        }
-
-        System.out.println("Usuario generado: " + usuario + " contraseña generada: "+ contrasenya);
-        Cliente cliente = new Cliente(usuario, contrasenya);
-        clientes.add(cliente);
-
-    }
-
-
 }
