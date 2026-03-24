@@ -43,7 +43,7 @@ public class AppZonaClientes {
     static void imprimirProductos() {
         boolean seguir = true;
         while (seguir) {
-            System.out.println("\nElige un producto de la lista...");
+            System.out.println("Elige un producto de la lista...");
             for (Producto p : Producto.values()) {
                 System.out.println(p.name() + ": " + p.getPrecio() + "€");
             }
@@ -75,7 +75,7 @@ public class AppZonaClientes {
     }
 
     static void mostrarOpciones() {
-        System.out.println("\n[1]. Aplicar promos. [2]. Ver ordenado (Bonus). [3]. Terminar.");
+        System.out.println("[1]. Aplicar promos. [2]. Ver ordenado (Bonus). [3]. Terminar.");
         String op = teclado.nextLine();
         if (op.equals("1")) {
             if (!cliente.hasPromociones()) {
