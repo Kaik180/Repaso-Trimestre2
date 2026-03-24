@@ -9,22 +9,24 @@ public class Mercadaw {
         String caracteres = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
         Random rnd = new Random();
 
-        System.out.println("--- CLIENTES GENERADOS (Copia uno para entrar) ---");
+        System.out.println("--- CLIENTE GENERADO ---");
 
-        for (int i = 0; i < 5; i++) {
-            StringBuilder u = new StringBuilder();
-            StringBuilder c = new StringBuilder();
-            for (int j = 0; j < 8; j++) { // Tamaño 8 según instrucciones [cite: 73]
-                u.append(caracteres.charAt(rnd.nextInt(caracteres.length())));
-                c.append(caracteres.charAt(rnd.nextInt(caracteres.length())));
-            }
+        String u = "";
+        String c = "";
 
-            Cliente nuevo = new Cliente(u.toString(), c.toString());
-            clientes.add(nuevo);
-
-
-            System.out.println("Usuario: " + nuevo.getUsuario() + " | Contraseña: " + nuevo.getContrasenya());
+        for (int j = 0; j < 8; j++) {
+            // Concatenamos directamente el carácter aleatorio a la cadena
+            u += caracteres.charAt(rnd.nextInt(caracteres.length()));
+            c += caracteres.charAt(rnd.nextInt(caracteres.length()));
         }
+
+
+        Cliente nuevo = new Cliente(u, c);
+        clientes.add(nuevo);
+
+
+        System.out.println("Usuario: " + nuevo.getUsuario() + " | Contraseña: " + nuevo.getContrasenya());
+
         System.out.println("--------------------------------------------------\n");
     }
 
