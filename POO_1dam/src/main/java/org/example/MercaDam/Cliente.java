@@ -9,6 +9,13 @@ public class Cliente {
     private Pedido pedido;
     private boolean promociones;
 
+    public String getUsuario() { return usuario; }
+    public String getContrasenya() { return contrasenya; }
+    public String getDireccion() { return direccion; }
+    public Pedido getPedido() { return pedido; }
+    public boolean hasPromociones() { return promociones; }
+    public void setPromociones(boolean valor) { this.promociones = valor; }
+
     public Cliente(String usuario, String contrasenya) {
         this.usuario = usuario;
         this.contrasenya = contrasenya;
@@ -29,11 +36,4 @@ public class Cliente {
         }
     }
 
-    // Getters
-    public String getUsuario() { return usuario; }
-    public String getContrasenya() { return contrasenya; }
-    public String getDireccion() { return direccion; }
-    public Pedido getPedido() { return pedido; }
-    public boolean hasPromociones() { return promociones; }
-    public void setPromociones(boolean valor) { this.promociones = valor; }
 }

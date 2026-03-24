@@ -7,7 +7,7 @@ public class Mercadaw {
 
     public void generarClientes() {
         String caracteres = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-        Random rnd = new Random();
+        Random aleatorio = new Random();
 
         System.out.println("--- CLIENTE GENERADO ---");
 
@@ -15,9 +15,8 @@ public class Mercadaw {
         String c = "";
 
         for (int j = 0; j < 8; j++) {
-            // Concatenamos directamente el carácter aleatorio a la cadena
-            u += caracteres.charAt(rnd.nextInt(caracteres.length()));
-            c += caracteres.charAt(rnd.nextInt(caracteres.length()));
+            u += caracteres.charAt(aleatorio.nextInt(caracteres.length()));
+            c += caracteres.charAt(aleatorio.nextInt(caracteres.length()));
         }
 
 
