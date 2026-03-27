@@ -29,7 +29,9 @@ public class AppZonaClientes {
                 }
             }
             intentos--;
-            if (intentos > 0) System.out.println("Credenciales no válidas. Intentos: " + intentos);
+            if (intentos > 0){
+                System.out.println("Credenciales no válidas. Intentos: " + intentos);
+            }
         }
         System.err.println("ERROR DE AUTENTICACIÓN");
     }
@@ -53,29 +55,31 @@ public class AppZonaClientes {
             try {
                 Producto p = Producto.valueOf(pStr);
                 cliente.insertarProducto(p);
-                System.out.println("Has añadido " + p.name() + ". Total: " + String.format("%.2f", cliente.getPedido().getImporteTotal()) + "€");
+                System.out.println("Has añadido " + p.name() + ". Total: " + cliente.getPedido().getImporteTotal() + "€");
             } catch (Exception e) {
                 System.out.println("Producto no reconocido. Elige otro...");
                 continue;
             }
 
             System.out.print("¿Quieres añadir más productos (S/N)? ");
-            if (teclado.nextLine().equalsIgnoreCase("N")) seguir = false;
+            if (teclado.nextLine().equalsIgnoreCase("N")){
+                seguir = false;
+            }
         }
         imprimirResumen();
     }
 
     static void imprimirResumen() {
-        System.out.println("\n=== RESUMEN DE TU CARRITO DE LA COMPRA ===");
+        System.out.println("=== RESUMEN DE TU CARRITO DE LA COMPRA ===");
         cliente.getPedido().getPedido().forEach((p, cant) -> {
             System.out.println(cant + " " + p.name() + " " + p.getPrecio());
         });
-        System.out.println("IMPORTE TOTAL: " + String.format("%.2f", cliente.getPedido().getImporteTotal()) + "€");
+        System.out.println("Importe total: " + cliente.getPedido().getImporteTotal() + "€");
         mostrarOpciones();
     }
 
     static void mostrarOpciones() {
-        System.out.println("[1]. Aplicar promos. [2]. Ver ordenado (Bonus). [3]. Terminar.");
+        System.out.println("[1]. Aplicar promos. [3]. Terminar.");
         String op = teclado.nextLine();
         if (op.equals("1")) {
             if (!cliente.hasPromociones()) {

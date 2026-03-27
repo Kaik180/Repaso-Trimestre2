@@ -16,7 +16,7 @@ public class Calculadora {
     }
 
     public int resta() {
-        // Error introducido de forma intencionada para detectarlo con JUnit
+
         int resultado = primerNumero - segundoNumero;
         return resultado;
     }
@@ -30,7 +30,7 @@ public class Calculadora {
         if (segundoNumero== 0){
          throw  new java.lang.ArithmeticException("division por 0");
         }else {
-            // Error introducido de forma intencionada para detectarlo con JUnit
+
             int resultado = primerNumero / segundoNumero;
             return resultado;
         }

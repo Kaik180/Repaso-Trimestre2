@@ -19,7 +19,7 @@ public class Cliente {
     public Cliente(String usuario, String contrasenya) {
         this.usuario = usuario;
         this.contrasenya = contrasenya;
-        this.direccion = "Calle falsa, 123";
+        this.direccion = "Calle falsa, 13";
         this.pedido = null;
         this.promociones = false;
     }
