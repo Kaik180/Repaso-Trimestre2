@@ -1,8 +1,5 @@
 package org.example.lambda;
 
-import java.util.ArrayList;
-import java.util.List;
-
 class Producto {
     String nombre;
     double precio;
@@ -20,7 +17,3 @@ class Producto {
     }
 }
 
-@FunctionalInterface
-interface FiltroProducto {
-    boolean filtrar(Producto producto);
-}

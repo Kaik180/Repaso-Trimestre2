@@ -1,13 +1,8 @@
 package org.example.lambda;
 
-@FunctionalInterface
-interface Ejecutor {
-    boolean ejecutar(int num);
-}
-
 public class Eje {
-    public static void main(String[] args) {
-        // Implementación de la lambda
+    static void main() {
+
         Ejecutor comparador = (n) -> n > 10;
 
         // Pruebas

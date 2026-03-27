@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FiltrarProducto {
-    public static void main(String[] args) {
+    static void main(String[] args) {
         List<Producto> productos = new ArrayList<>();
         productos.add(new Producto("Smartphone", 150.0, "Electrónica"));
         productos.add(new Producto("Laptop", 900.0, "Electrónica"));
