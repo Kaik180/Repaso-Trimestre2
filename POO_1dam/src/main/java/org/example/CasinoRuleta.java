@@ -46,8 +46,8 @@ public class CasinoRuleta {
         String colorRuleta = coloresValidos.get(random.nextInt(2));
         String paridadRuleta = (numeroRuleta % 2 == 0) ? "par" : "impar";
 
-        System.out.println("\nResultado de la ruleta: " + numeroRuleta + " " + colorRuleta + " (" + paridadRuleta + ")");
-        
+        System.out.println("Resultado de la ruleta: " + numeroRuleta + " " + colorRuleta + " (" + paridadRuleta + ")");
+
         if (numeroUsuario == numeroRuleta) {
             if (numeroUsuario == 0) {
                 System.out.println("¡HA GANADO! (El 0 gana y los demás pierden)");
