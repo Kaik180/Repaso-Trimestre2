@@ -1,4 +1,4 @@
-package org.example.Ejemplos;
+package org.example.Repaso;
 
 import java.util.*;
 
