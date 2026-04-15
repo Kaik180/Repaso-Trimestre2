@@ -5,7 +5,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/25" fx:controller="org.example.pruebafx.HelloController">
+<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.pruebafx.HelloController">
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
     </padding>
@@ -14,5 +14,6 @@
     <Button onAction="#onHelloButtonClick" prefHeight="30.0" prefWidth="48.0" text="Hello!" />
    <Button fx:id="pruebaPulsarButton" mnemonicParsing="false" prefHeight="44.0" prefWidth="71.0" text="PULSA!" />
    <Label fx:id="contadorLabel" text="Contar" textFill="#002fff" />
-   <Button mnemonicParsing="false" text="Siguiente" />
+   <Button mnemonicParsing="false" onAction="#siguienteClickButton" text="Siguiente" />
+<!--   <Button fx:id="ResetContador" mnemonicParsing="false" text="Resetear contador" onAction="#resetContador" />-->
 </VBox>
