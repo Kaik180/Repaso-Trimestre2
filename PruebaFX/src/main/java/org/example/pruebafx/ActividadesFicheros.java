@@ -85,4 +85,16 @@ public class ActividadesFicheros {
             e.printStackTrace();
         }
     }
+    public void borrarFichero(String nombreFichero) {
+        File f = new File("src/main/resources/" + nombreFichero);
+        if (f.exists()) {
+            if (f.delete()) {
+                System.out.println("Fichero " + nombreFichero + " borrado con éxito.");
+            } else {
+                System.out.println("No se pudo borrar el fichero.");
+            }
+        } else {
+            System.out.println("El fichero no existe.");
+        }
+    }
 }

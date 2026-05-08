@@ -40,6 +40,10 @@ public class HelloController {
     public void guardarButton(ActionEvent actionEvent) {
     }
 
+    public void irAFicheros() throws IOException {
+        HelloApplication.setRoot("ficheroview");
+    }
+
 
 //    public  void resetContador() throws IOException {
 //        contador.resetear();

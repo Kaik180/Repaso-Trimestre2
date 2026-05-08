@@ -15,5 +15,6 @@
    <Button fx:id="pruebaPulsarButton" mnemonicParsing="false" prefHeight="44.0" prefWidth="71.0" text="PULSA!" />
    <Label fx:id="contadorLabel" text="Contar" textFill="#002fff" />
    <Button mnemonicParsing="false" onAction="#siguienteClickButton" text="Siguiente" />
+    <Button mnemonicParsing="false" onAction="#irAFicheros" text="Ir a Práctica Ficheros" style="-fx-background-color: #2ecc71; -fx-text-fill: white;" />
 <!--   <Button fx:id="ResetContador" mnemonicParsing="false" text="Resetear contador" onAction="#resetContador" />-->
 </VBox>
