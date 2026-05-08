@@ -44,8 +44,8 @@ public class SegundoController {
     }
 
 
-    public  void atrasClickButton() throws IOException {
-        HelloApplication.setRoot("hello-view.fxml");
+    public void atrasClickButton() throws IOException {
+        HelloApplication.setRoot("hello-view");
     }
 
     public void guardarButton(){

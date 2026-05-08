@@ -16,7 +16,6 @@
     </padding>
 
     <Label fx:id="welcomeText" />
-    <Button fx:id="AtrasButton" mnemonicParsing="false" text="Atras" />
     <Label fx:id="welcomeText1" text="Mantenimiento de Estudiantes" textFill="#0e80eb" />
 
     <TableView fx:id="tablaEstudiantes" prefHeight="200.0" prefWidth="200.0">
